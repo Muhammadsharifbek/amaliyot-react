@@ -47,8 +47,6 @@ function App() {
           <NewEventForm />
         </Modal>
       )}
-      <br />
-      <br />
       <button onClick={() => closeModal(true)}> Show Modal</button>
     </div>
   );
