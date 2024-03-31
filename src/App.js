@@ -15,7 +15,10 @@ function App() {
     { title: "Sukhrob's birthday", id: 3 },
   ]);
 
-  const setCloseModal = () => {
+  const newEvent = (event) => {
+    setEvents((prev) => {
+      return [...prev, event];
+    });
     closeModal(false);
   };
 
@@ -43,8 +46,8 @@ function App() {
       {showContent && <EventList event={event} deleteTitle={deleteTitle} />}
 
       {showModal && (
-        <Modal setCloseModal={setCloseModal}>
-          <NewEventForm />
+        <Modal>
+          <NewEventForm newEvent={newEvent} />
         </Modal>
       )}
       <button onClick={() => closeModal(true)}> Show Modal</button>
