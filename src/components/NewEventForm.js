@@ -6,6 +6,7 @@ import "../App.js";
 function NewEventForm({ newEvent }) {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
+  const [location, setLocation] = useState("Bukhara");
 
   const resetInputs = () => {
     setTitle("");
@@ -18,6 +19,7 @@ function NewEventForm({ newEvent }) {
     const event = {
       title: title,
       date: date,
+      location: location,
       id: uuidv4,
     };
     newEvent(event);
@@ -53,10 +55,14 @@ function NewEventForm({ newEvent }) {
       <br />
       <br />
       <button>submit</button>
-      <br />
-      <hr />
-      <h2> Title: {title}</h2>
-      <h2> Date: {date}</h2>
+      <label>
+        <span>CHange Location:</span>
+        <select onChange={(e) => setLocation(e.target.value)}>
+          <option value="bukhara">Bukhara</option>
+          <option value="tashkent">Tashkent</option>
+          <option value="london">London</option>
+        </select>
+      </label>
     </form>
   );
 }
