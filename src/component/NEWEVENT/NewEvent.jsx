@@ -73,7 +73,7 @@ function NewEventForm({ addUser }) {
                 }
               />
             </label>
-            /* from */
+
             <label>
               <span> From:</span>
               <input

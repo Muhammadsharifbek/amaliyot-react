@@ -27,8 +27,8 @@ function App() {
   };
 
   const closeModal = (e) => {
-    if (e.target.classList === "overlay") setShowModal(false);
-    if (e.key === "escape") setShowModal(false);
+    if (e.target.className === "overlay") setShowModal(false);
+    if (e.key === "Escape") setShowModal(false);
   };
 
   return (
